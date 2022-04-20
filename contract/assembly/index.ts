@@ -12,7 +12,7 @@ export function buyBook(bookId: string): void {
     throw new Error("book not found");
   }
 
-  assert(book.price.toString() == context.attachedDeposit.toString(), "attached deposit should be greater than the product's price");
+  assert(book.price.toString() <= context.attachedDeposit.toString(), "attached deposit should be greater than the product's price");
   
    /**
     * `ContractPromiseBatch` is used here to create a transaction to transfer the money to the seller
