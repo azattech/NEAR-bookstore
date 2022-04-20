@@ -8,6 +8,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [allBooks, setAllBooks] = useState([]);
 
+  // to get all books
   const getAllBooks = async () => {
     try {
       setLoading(true);

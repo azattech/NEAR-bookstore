@@ -7,6 +7,7 @@ import { buyBook } from "../utils";
 const Book = ({ book }) => {
   const { id, price, name, description, sold, author, image, owner } = book;
 
+  // to buy a book
   const buy = async () => {
     try {
       await buyBook({

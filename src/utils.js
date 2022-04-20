@@ -35,20 +35,23 @@ export async function initContract() {
       // View methods are read only. They don't modify the state, but usually return some value.
       viewMethods: ["getBooks", "getBook"],
       // Change methods can modify the state. But you don't receive the returned value when called.
-      changeMethods: ["setBook", "buyBook", "deleteBook"],
+      changeMethods: ["setBook", "buyBook"],
     }
   );
 }
 
+// To logout for bookstore
 export function logout() {
   window.walletConnection.signOut();
   window.location.replace(window.location.origin + window.location.pathname);
 }
 
+// To login for bookstore
 export function login() {
   window.walletConnection.requestSignIn(nearConfig.contractName);
 }
 
+// To get account balance
 export async function accountBalance() {
   return formatNearAmount(
     (await window.walletConnection.account().getAccountBalance()).total,
@@ -56,20 +59,24 @@ export async function accountBalance() {
   );
 }
 
+// to add book
 export function addBook(book) {
   book.id = uuid4();
   book.price = parseNearAmount(book.price + "");
   return window.contract.setBook({ book });
 }
 
+// to get all books that saved previously.
 export function getBooks() {
   return window.contract.getBooks();
 }
 
-export async function buyBook({ id, price }) {
-  await window.contract.buyBook({ bookId: id }, GAS, price);
+// to get book by id
+export function getBook({ id }) {
+  return window.contract.getBook({ id });
 }
 
-export function deleteBook({ id }) {
-  window.contract.deleteBook({ id });
+// to buy book.
+export async function buyBook({ id, price }) {
+  await window.contract.buyBook({ bookId: id }, GAS, price);
 }

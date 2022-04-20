@@ -21,7 +21,8 @@ export default function AddBook() {
     price: price,
   };
 
-  const sendBook = async () => {
+  // to add book to near protocol
+  const saveBook = async () => {
     try {
       addBook(data).then((resp) => {});
     } catch (error) {
@@ -88,7 +89,7 @@ export default function AddBook() {
         variant="primary"
         disabled={!isFormFilled()}
         onClick={() => {
-          sendBook();
+          saveBook();
           navigate("/");
         }}
       >
