@@ -60,16 +60,16 @@ Modify the line in `src/config.js` that sets the account name of the contract. S
 
 ## Step 3: Contract operations;
 
-near call $CONTRACT setBook '{
-"book": {
-"id": “1”,
-"name": "The Bitcoin Standard",
-"author": "Saifedean Ammous",
-"description": "a new electronic cash system that’s fully peer-to-peer, with no trusted third party",
-"price": “2000000000000000000000000",
-"image": "https://images-na.ssl-images-amazon.com/images/I/411zm29rf-L._SX335_BO1,204,203,200_.jpg"
-}
-}' --accountId <accountID>
+     near call $CONTRACT setBook '{
+          "book": {
+          "id": “1”,
+          "name": "The Bitcoin Standard",
+          "author": "Saifedean Ammous",
+          "description": "a new electronic cash system that’s fully peer-to-peer, with no trusted third party",
+          "price": “2000000000000000000000000",
+          "image": "https://images-na.ssl-images-amazon.com/images/I/411zm29rf-L._SX335_BO1,204,203,200_.jpg"
+         }
+      }' --accountId <accountID>
 
     near view $CONTRACT getBook '{ "id": “1” }' --accountId <accountID>
 
