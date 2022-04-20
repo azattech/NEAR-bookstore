@@ -58,7 +58,7 @@ Modify the line in `src/config.js` that sets the account name of the contract. S
 
     const CONTRACT_NAME = process.env.CONTRACT_NAME || 'bookstore.YOUR-NAME.testnet'
 
-## Step 3: Contract operations;
+## Step 3: Contract operations
 
      near call $CONTRACT_NAME setBook '{
           "book": {
