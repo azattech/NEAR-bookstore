@@ -3,7 +3,8 @@ import { PersistentUnorderedMap, context, PersistentMap, u128 } from "near-sdk-a
 
 /**
  * booksStorage - it's a key-value datastructure that is used to store books by sellers.
- * PersistentUnorderedMap is useful additional functions that allow us to iterate over keys, values, entries.
+ * PersistentUnorderedMap - similar to PersistentMap but with useful additional functions 
+ * that allow us to iterate over keys, values, entries.
  * The string LISTED_BOOKS in the PersistentUnorderedMap's constructor is the unique prefix to use for every key.
  */
 export const booksStorage = new PersistentUnorderedMap<string, Book>("LISTED_BOOKS");
