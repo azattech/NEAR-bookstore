@@ -60,7 +60,7 @@ Modify the line in `src/config.js` that sets the account name of the contract. S
 
 ## Step 3: Contract operations;
 
-     near call $CONTRACT setBook '{
+     near call $CONTRACT_NAME setBook '{
           "book": {
           "id": “1”,
           "name": "The Bitcoin Standard",
@@ -71,11 +71,11 @@ Modify the line in `src/config.js` that sets the account name of the contract. S
          }
       }' --accountId <accountID>
 
-    near view $CONTRACT getBook '{ "id": “1” }' --accountId <accountID>
+    near view $CONTRACT_NAME getBook '{ "id": “1” }' --accountId <accountID>
 
-    near view $CONTRACT getBooks --accountId <accountID>
+    near view $CONTRACT_NAME getBooks --accountId <accountID>
 
-    near call $CONTRACT buyBook '{ "id: "1", "price", "2000000000000000000000000"}' --accountId <accountID>
+    near call $CONTRACT_NAME buyBook '{ "id: "1", "price", "2000000000000000000000000"}' --accountId <accountID>
 
 ## Step 4: deploy!
 
