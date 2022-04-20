@@ -71,11 +71,11 @@ near call $CONTRACT setBook '{
 }
 }' --accountId <accountID>
 
-near view $CONTRACT getBook '{ "id": “1” }' --accountId <accountID>
+    near view $CONTRACT getBook '{ "id": “1” }' --accountId <accountID>
 
-near view $CONTRACT getBooks --accountId <accountID>
+    near view $CONTRACT getBooks --accountId <accountID>
 
-near call $CONTRACT buyBook '{ "id: "1", "price", "2000000000000000000000000"}' --accountId <accountID>
+    near call $CONTRACT buyBook '{ "id: "1", "price", "2000000000000000000000000"}' --accountId <accountID>
 
 ## Step 4: deploy!
 
