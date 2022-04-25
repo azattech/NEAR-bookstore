@@ -75,7 +75,7 @@ Modify the line in `src/config.js` that sets the account name of the contract. S
 
     near view $CONTRACT_NAME getBooks --accountId <accountID>
 
-    near call $CONTRACT_NAME buyBook '{ "id: "1", "price", "2000000000000000000000000"}' --accountId <accountID>
+    near call $CONTRACT_NAME buyBook '{ "id: "1", "price", "2000000000000000000000000"}' --accountId <accountID> --deposit 2
 
 ## Step 4: deploy!
 
