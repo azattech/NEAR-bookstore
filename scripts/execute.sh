@@ -1,4 +1,4 @@
- #!/usr/bin/env bash
+ #!/usr/bin/env shell
 
 # exit on first error after this point to avoid redeploying with successful build
 set -e
