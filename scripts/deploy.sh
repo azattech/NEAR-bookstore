@@ -1,4 +1,4 @@
-#!/usr/bin/env shell
+#!/usr/bin/env bash
 
 [ -z "$CONTRACT_NAME" ] && echo "Missing \$CONTRACT_NAME environment variable"
 
