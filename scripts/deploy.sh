@@ -19,17 +19,17 @@ echo --------------------------------------------
 echo
 echo "rebuilding the contract (release build)"
 echo
-yarn build
+yarn build:release
 
 echo --------------------------------------------
 echo
 echo "redeploying the contract"
 echo
-near dev-deploy ./build/release/greeter.wasm
+near dev-deploy ./contract/build/release/greeter.wasm
 
 echo --------------------------------------------
 echo run the following commands
 echo
-echo 'export CONTRACT_NAME=Your-Dev-ID-123-456.testnet'
+echo "export CONTRACT_NAME=dev-123-456>"
 
 exit 0

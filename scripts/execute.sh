@@ -20,20 +20,10 @@ echo
 echo "(run this script again to see changes made by this file)"
 echo ---------------------------------------------------------
 echo
-echo "get Books"
-
-near view $CONTRACT_NAME getBook '{ "id": “1” }'
-
-echo 
-echo  "get all books"
 echo  "please add your test account"
-
-near view $CONTRACT_NAME getBooks  --accountId accountID
-
-echo 
+echo
 echo  "set a book"
-
- near call $CONTRACT_NAME setBook '{
+echo near call $CONTRACT_NAME setBook '{
   "book": {
       "id": “1”,
       "name": "The Bitcoin Standard",
@@ -43,13 +33,18 @@ echo  "set a book"
       "image": "https://images-na.ssl-images-amazon.com/images/I/411zm29rf-L._SX335_BO1,204,203,200_.jpg"
     }
  }' --accountId accountID
-
+echo
+echo  "get all books"
+echo
+echo near view $CONTRACT_NAME getBooks  --accountId accountID
+echo
+echo "get Books"
+echo
+echo near view $CONTRACT_NAME getBook '{"id": “1”}' --accountId accountID
+echo 
 echo 
 echo  "buying a book"
-
-near call $CONTRACT_NAME buyBook '{ "id: "1", "price", "2000000000000000000000000"}' --accountId accountID --deposit 2
-
+echo near call $CONTRACT_NAME buyBook '{ "id: "1", "price", "2000000000000000000000000"}' --accountId accountID --deposit 2
 echo
-
 echo "now run this script again to see changes made by this file"
 exit 0
