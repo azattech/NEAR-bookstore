@@ -1,12 +1,12 @@
 import { Book, booksStorage } from './model';
-import { context, ContractPromiseBatch } from "near-sdk-as";
+import { context, ContractPromiseBatch, u128} from "near-sdk-as";
 
 /**
  * It is used to issue buy transactions when a book is purchased from a given seller 
  * (if the book is available)
  * @param bookId - an identifier of a book that is the subject of purchase
  */
-export function buyBook(bookId: string): void {
+export function buyBook(bookId: u32): void {
   const book = getBook(bookId);
   if (book == null) {
     throw new Error("book not found");
@@ -25,19 +25,20 @@ export function buyBook(bookId: string): void {
 }
 
 /**
- * @param book - to add a book to blockchain
+ * @params - to add a book to blockchain
  */
-export function setBook(book: Book): void {
+export function setBook(name: string, author: string, description: string, image: string, price: u128): void {
+  const book = new Book(name, author, description, image, price);
   let storedBook = booksStorage.get(book.id);
   assert(storedBook == null, `a book with id=${book.id} already exists`);
-  booksStorage.set(book.id, Book.fromPayload(book))
+  booksStorage.set(book.id, book);
 }
 
 /** 
  * @param id - returns added a book via id parameter.
  * @returns - given id's book
  */
-export function getBook(id: string): Book | null {
+export function getBook(id: u32): Book | null {
   return booksStorage.get(id);
 }
 

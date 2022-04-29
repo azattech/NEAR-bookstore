@@ -13,18 +13,10 @@ export default function AddBook() {
   const [price, setPrice] = useState(0);
   const isFormFilled = () => name && author && description && image && price;
 
-  const data = {
-    name: name,
-    author: author,
-    description: description,
-    image: image,
-    price: price,
-  };
-
   // to add book to near protocol
   const saveBook = async () => {
     try {
-      addBook(data).then((resp) => {});
+      addBook(name, author, description, image, price).then((resp) => {});
     } catch (error) {
       console.log(error);
     } finally {

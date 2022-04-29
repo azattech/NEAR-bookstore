@@ -60,10 +60,15 @@ export async function accountBalance() {
 }
 
 // to add book
-export function addBook(book) {
-  book.id = uuid4();
-  book.price = parseNearAmount(book.price + "");
-  return window.contract.setBook({ book });
+export function addBook(name, author, description, image, price) {
+  price = parseNearAmount(price + "");
+  return window.contract.setBook({
+    name: name,
+    author: author,
+    description: description,
+    image: image,
+    price: price,
+  });
 }
 
 // to get all books that saved previously.
