@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 
 [ -z "$CONTRACT_NAME" ] && echo "Missing \$CONTRACT_NAME environment variable"
-[ -z "$OWNER" ] && echo "Missing \$OWNER environment variable"
 
-echo "deleting $CONTRACT_NAME" and setting $OWNER as beneficiary"
+echo "deleting $CONTRACT_NAME"
 echo
-near delete $CONTRACT_NAME $OWNER
+near delete $CONTRACT_NAME
 
 echo --------------------------------------------
 echo
@@ -32,6 +31,6 @@ echo --------------------------------------------
 echo run the following commands
 echo
 echo "export CONTRACT_NAME=dev-123-456>"
-echo "export OWNER=<your own account>"
+echo
 
 exit 0
