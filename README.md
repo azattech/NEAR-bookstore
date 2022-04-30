@@ -61,11 +61,11 @@ Modify the line in `src/config.js` that sets the account name of the contract. S
 ## Step 3: Contract operations
 
 near call $CONTRACT*NAME setBook '{
-"name": "Blockchain Bubble or Revolution",
-"author": "Neel Mehta", "description":
-"Some experts say that Bitcoin and cryptocurrencies are just a scam; others say they're "the most important invention since the internet." It's hard to tell who's right.",
-"image": "https://images-na.ssl-images-amazon.com/images/I/5167oS7ob6L._SX322_BO1,204,203,200*.jpg",
-"price" : “4000000000000000000000000”
+    "name": "Blockchain Bubble or Revolution",
+    "author": "Neel Mehta", "description":
+    "Some experts say that Bitcoin and cryptocurrencies are just a scam; others say they're "the most important invention since the internet." It's hard       to tell who's right.",
+    "image": "https://images-na.ssl-images-amazon.com/images/I/5167oS7ob6L._SX322_BO1,204,203,200*.jpg",
+    "price" : “4000000000000000000000000”
 }' --accountId <accountID>
 
     near view $CONTRACT_NAME getBook '{ "id": 1 }' --accountId <accountID>
