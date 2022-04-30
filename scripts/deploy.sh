@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
-[ -z "$CONTRACT_NAME" ] && echo "Missing \$CONTRACT_NAME environment variable"
+[ -z "$CONTRACT" ] && echo "Missing \$CONTRACT environment variable"
+[ -z "$OWNER" ] && echo "Missing \$OWNER environment variable"
 
-echo "deleting $CONTRACT_NAME"
+echo "deleting $CONTRACT and setting $OWNER as beneficiary"
 echo
-near delete $CONTRACT_NAME
+near delete $CONTRACT $OWNER
 
 echo --------------------------------------------
 echo
@@ -17,7 +18,7 @@ set -e
 
 echo --------------------------------------------
 echo
-echo "rebuilding the contract"
+echo "rebuilding the contract (build)"
 echo
 yarn build
 
@@ -30,7 +31,9 @@ near dev-deploy ./contract/build/release/greeter.wasm
 echo --------------------------------------------
 echo run the following commands
 echo
-echo "export CONTRACT_NAME=dev-123-456>"
+echo 'export CONTRACT=<dev-123-456>'
+echo 'export OWNER=<your own account>'
+echo
 echo
 
 exit 0
