@@ -60,7 +60,7 @@ Modify the line in `src/config.js` that sets the account name of the contract. S
 
 ## Step 3: Contract operations
 
-   near call $CONTRACT setBook '{
+     near call $CONTRACT setBook '{
         "name": "Blockchain Bubble or Revolution",
         "author": "Neel Mehta", "description":
         "Some experts say that Bitcoin and cryptocurrencies are just a scam; others say they're "the most important invention since the internet."
